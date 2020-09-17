@@ -1,5 +1,6 @@
-age_string = input('Enter your age: ')
-age = int(age_string)
+# age_string = input('Enter your age: ')
+#age = int(age_string)
+age = 10
 
 if (age <= 10) and (age >= 5):
     print('Teletubbies')
@@ -45,16 +46,54 @@ for y in range(3):
     print('hello')
 
 # coding exercise
-x = 8.0
-epsilon = 0.05
+x = 13.0
+epsilon = 0.01
 
 low = 0.0
 high = x
 
-guess = (low + high) / 2
+guess = (low + high) / 2.0
+num_guesses = 0
 
 while abs(guess**2 - x) >= epsilon:
-    print(f'low = {low}, high = {high}, guess={guess}')
+    num_guesses += 1
+    print(f'low = {low}, high = {high}, guess={guess}, guess squared:', guess**2)
 
-    if (guess**2 - x) < 0:
-        # increase our guess
+    if guess**2 == x:
+        # we guessed it!
+        print('Yay')
+    elif guess**2 < x:
+        # increase our guess (our guess is too low)
+        low = guess
+    else:
+        # decrease our guess (our guess is too high)
+        high = guess 
+
+    guess = (low + high) / 2.0
+
+# coding exercise 2
+
+# sin(x) = x**1 / 1! - x**3 / 3! + x**5 / 5! - x**7 / 7! + x**9 / 9! - x**11 / 11! + ...
+# e**x = x**0/0! + x**1/1! + x**2/2! + x**3/e! + x**4/4! + x**5/5! + ...
+
+import math
+
+x = 1.0
+estimate = 0.0
+number_of_terms = 100
+for n in range(0, number_of_terms, 1):
+    term = x ** n / math.factorial(n)
+    estimate += term
+
+print(f'estimate = {estimate}, actual value = {math.e}')
+
+# 8 / 2 == 4
+# 9 / 2 == 4.5
+# 9 // 2 == 4
+# 9 % 2 == 1   (modulo)
+
+num = 32
+if (num % 2) == 0:
+    print(f'{num} is an even number')
+else:
+    print(f'{num} is an odd number')
