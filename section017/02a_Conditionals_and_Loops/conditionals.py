@@ -59,6 +59,23 @@ while abs(guess**2 - x) >= epsilon:
     guess = (low + high) / 2.0
 
 import math
+
 print(f'guess: {guess}')
 print('real: ', math.sqrt(8.0))
 
+# coding exercise #2
+
+# e**x = x**0/0! + x**1/1! + x**2/2! + x**3/3! + x**4/4! + ...
+# Notes:
+#   x = x**1/1!
+#   1 = x**0/0!
+#   0! = 1
+
+x = 1.0
+total = 0.0
+
+for n in range(100):
+    term = x**n / math.factorial(n)
+    total += term
+
+print(f'e**x approximated is {total}')
