@@ -31,3 +31,9 @@ reverse = reverse + word
 print(reverse)
 print(sentence[::-1])
 
+# coding exercise (actual version) - another way to do it
+words = sentence.split(' ')
+words_reverse = []
+for word in words:
+    words_reverse = [word] + words_reverse
+print(' '.join(words_reverse))

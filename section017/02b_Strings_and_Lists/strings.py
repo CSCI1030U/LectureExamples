@@ -60,3 +60,15 @@ words_reverse = []
 for word in words:
     words_reverse = [word] + words_reverse
 print(' '.join(words_reverse))
+
+# coding exercise (actual version) - without split and join
+sentence = 'the quick brown fox jumped over the lazy dog'
+reverse = ''
+word = ''
+for character in sentence:
+    if character == ' ':
+        reverse = reverse + word
+        word = ' '
+    else:
+        word += character
+reverse = reverse + word

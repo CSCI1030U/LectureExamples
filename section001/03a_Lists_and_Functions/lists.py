@@ -75,17 +75,12 @@ def shift(character, shift_amount):
 
     return alphabet[new_index]
 
-
-
 def caesar_cipher(message, shift_amount):
     ciphertext = ''
     for character in message:
         encrypted_character = shift(character, shift_amount)
         ciphertext += encrypted_character
     return ciphertext
-
-
-
 
 message = 'meetmeatthezoo'
 print(f'{message} encrypted using the caesar cipher is:', caesar_cipher(message, 1))
