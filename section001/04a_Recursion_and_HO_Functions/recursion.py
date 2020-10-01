@@ -45,5 +45,40 @@ def fib(n):
         return n
 
     # recursive case
-    # TODO: Write the code (1 line)
-    
+    return fib(n - 1) + fib(n - 2)
+
+def fib_efficient(n):
+    if n <= 1:
+        return n
+
+    last_fib = 1
+    prev_fib = 0
+    current_index = 1
+
+    while current_index < n:
+        current_fib = last_fib + prev_fib
+        prev_fib = last_fib 
+        last_fib = current_fib
+        current_index += 1
+
+    return last_fib
+
+print(fib_efficient(0))
+print(fib_efficient(1))
+print(fib_efficient(2))
+print(fib_efficient(3))
+print(fib_efficient(4))
+print(fib_efficient(5))
+print(fib_efficient(100))
+# 2^40 calls of fib()
+
+def factorial(n):
+    # base case
+    if n <= 1:
+        return 1
+
+    # recursive case
+    return n * factorial(n - 1)
+
+
+# print(factorial(7)) # 5 * 4 * 3 * 2 * 1

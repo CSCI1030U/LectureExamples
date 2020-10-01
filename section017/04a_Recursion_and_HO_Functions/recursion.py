@@ -50,8 +50,8 @@ def fibonacci(n):
 # print(fibonacci(2))
 # print(fibonacci(3))
 # print(fibonacci(4))
-# print(fibonacci(5))
-print(fibonacci(50))
+print(fibonacci(5))
+# print(fibonacci(50))
 
 '''
 The adventurous might want to try to implement this sequence (using a loop, most likely):
