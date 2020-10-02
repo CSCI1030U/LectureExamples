@@ -39,6 +39,7 @@ print_n_times(3, 'Hello world!')
 # fibonacci(1) = 1
 # fibonacci(n) = fibonacci(n - 1) + fibonacci(n - 2)
 
+# not tail recursive
 def fibonacci(n):
     if n <= 1:
         return n
@@ -50,7 +51,7 @@ def fibonacci(n):
 # print(fibonacci(2))
 # print(fibonacci(3))
 # print(fibonacci(4))
-print(fibonacci(5))
+# print(fibonacci(5))
 # print(fibonacci(50))
 
 '''
@@ -61,3 +62,20 @@ the hailstone sequence:
 - If n is even then the next n of the sequence = n/2.
 - If n is odd then the next n of the sequence = (3 * n) + 1.
 '''
+
+# Example:
+# factorial(5) => 5 * 4 * 3 * 2 * 1 = 1 * 2 * 3 * 4 * 5
+# factorial(2) => 2 * 1
+
+# factorial(1) => 1
+# factorial(n) => n * factorial(n - 1)
+
+# not tail recursive
+def factorial(n):
+    if n <= 1:
+        return 1
+    return n * factorial(n - 1)
+
+print('3! =', factorial(3))
+print('5! =', factorial(5))
+print('6! =', factorial(6))
