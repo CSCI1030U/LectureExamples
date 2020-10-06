@@ -40,6 +40,17 @@ def is_long(name):
     # else:
     #     return False 
     return len(name) >= 7
+
+def myfilter(function, values):
+    result = []
+
+    for val in values:
+        if function(val):
+            result.append(val)
+
+    return result
+
 long_names = list(myfilter(is_long, names))
 print(long_names)
+
 
