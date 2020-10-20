@@ -10,7 +10,7 @@ def factorial(n):
         result *= multiplier
         multiplier -= 1
 
-    # print(name) # yuck!  bad coding practice - access global variables in a function
+    # print(name) # yuck!  bad coding practice - don't access global variables in a function
     # instead, pass it as an argument (best practice)
 
     return result
