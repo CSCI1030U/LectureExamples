@@ -41,19 +41,3 @@ def better_fibonacci(n):
     return solutions[n]
 
 print(better_fibonacci(100))
-
-marks_dictionary = [('100000001', 67.5), ('100000002', 70.0)]
-marks_dictionary.append(('100000003', 75.5))
-print(marks_dictionary)
-
-sid_to_find = '100000003'
-for sid, mark in marks_dictionary:
-    if sid == sid_to_find:
-        print(mark)
-
-'''
-float[] marks = ...;
-cout << marks[3];
-
-marks + (3 * size_of_int)
-'''

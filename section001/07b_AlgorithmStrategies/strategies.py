@@ -1,6 +1,6 @@
 import math 
 
-# a famous divide and conquer algorith - binary search
+# the famous divide and conquer algorithm - binary search
 def binary_search(x, a, start, end):
     if start > end:
         return False 
