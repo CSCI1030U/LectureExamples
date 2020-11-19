@@ -19,17 +19,17 @@ while len(name_stack) > 0:
 # expression = '((1+2)*(3/4))'
 expression = '())('
 
-stacket = []
+bracket_stack = [] # aka stacket
 for ch in expression:
     if ch == '(':
-        stacket.append(ch)
+        bracket_stack.append(ch)
     elif ch == ')':
-        if len(stacket) > 0:
-            stacket.pop()
+        if len(bracket_stack) > 0:
+            bracket_stack.pop()
         else:
             print('Invalid expression: unmatched ")"')
             break
-if len(stacket) != 0:
+if len(bracket_stack) != 0:
     print('Invalid expression: unmatched "("')
 
 customers_queue = []
@@ -38,3 +38,4 @@ customers_queue.append('Barbara')
 customers_queue.append('Carla')
 while len(customers_queue) > 0:
     print(customers_queue.pop(0))
+
