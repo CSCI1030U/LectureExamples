@@ -7,97 +7,106 @@ class TicTacToe:
             [' ', ' ', ' '],
             [' ', ' ', ' ']
         ]
-
+    
     def print(self):
         print('+---+---+---+')
-        for row_index in range(0, len(self.board)):
-            for col_index in range(0, len(self.board[row_index])):
+        for row_index in range(len(self.board)):
+            for col_index in range(len(self.board[row_index])):
                 print(f'| {self.board[row_index][col_index]} ', end='')
             print('|')
             print('+---+---+---+')
 
     def _find_common(self, a, b, c):
-        # return a piece (X or O), if that piece 
-        # occupies all three variables
-        if a != ' ' and a == b and a == c:
+        if a == b and a == c and a != ' ':
             return a 
         else:
             return None
+        
+    # def find_winner(self):
+    #     pass 
 
-    def find_winner(self):
-        # find any horizontal wins
-        for row in self.board:
+    def _find_winner(self, board):
+        # check for horizontal wins
+        for row in board:
             common = self._find_common(row[0], row[1], row[2])
             if common:
-                return common
-
-        # find any vertical wins
-        for col_index in range(len(self.board[0])):
-            common = self._find_common(self.board[0][col_index], self.board[1][col_index], self.board[2][col_index])
+                return common 
+        
+        # check for vertical wins
+        for col_index in range(len(board[0])):
+            common = self._find_common(board[0][col_index], board[1][col_index], board[2][col_index])
             if common:
-                return common
+                return common 
 
-        # find any diagonal wins
-        common = self._find_common(self.board[0][0], self.board[1][1], self.board[2][2])
+        # check for diagonal wins
+        common = self._find_common(board[0][0], board[1][1], board[2][2])
         if common:
             return common 
-        common = self._find_common(self.board[2][0], self.board[1][1], self.board[0][2])
+        common = self._find_common(board[0][2], board[1][1], board[2][0])
         if common:
-            return common
-        
-        # find a tie game
-        for row in self.board:
+            return common 
+
+        # check for a tie game
+        for row in board:
             for cell in row:
                 if cell == ' ':
-                    return ' '
-        
-        return None  # tie game
-    
-    def opponent(self, player):
+                    # game is not over yet
+                    return ' ' 
+
+        # tie game
+        return None 
+
+    def opposite_player(self, player):
         if player == 'X':
             return 'O'
         else:
             return 'X'
 
-    def pick_move(self, player):
-        return self._pick_move(self.board, player)
-
     def _pick_move(self, board, player):
-        best_score = -1000
+        best_score = -1000 
         move_to_row = None 
         move_to_col = None 
-        opponent = self.opponent(player)
+        opponent = self.opposite_player(player)
 
-        # check to see if the game is over
-        winner = self.find_winner()
-        if not winner:
-            return None, None, 0
-        elif winner == player:
+        # check if the game is over
+        winner = self._find_winner(board)
+        if winner == player:
             return None, None, 1
         elif winner == opponent:
             return None, None, -1
+        elif not winner:
+            return None, None, 0
         
-        # the game is not over
-        # find the next move
+        # try every single move
         for row_index in range(len(board)):
             for col_index in range(len(board[row_index])):
+                # check if this space is available
                 if board[row_index][col_index] == ' ':
+                    # try this move
                     new_board = copy.deepcopy(board)
-                    new_board[row_index][col_index] = player
+                    new_board[row_index][col_index] = player 
+
+                    # evaluate the move
                     _, _, move_score = self._pick_move(new_board, opponent)
                     move_score *= -1
+
+                    # check if this move is better than the previous best move
                     if move_score > best_score:
                         best_score = move_score
                         move_to_row = row_index
-                        move_to_col = col_index
+                        move_to_col = col_index 
+        
         return move_to_row, move_to_col, best_score
+    
+    def pick_move(self, player):
+        return self._pick_move(self.board, player)
+
 
 ttt = TicTacToe()
 current_player = 'X'
-while ttt.find_winner() == ' ':
+while ttt._find_winner(ttt.board) == ' ':
     ttt.print()
-    row, col, score = ttt.pick_move(current_player)
-    if row and col:
-        ttt.board[row][col] = current_player
-    current_player = ttt.opponent(current_player)
+    r, c, score = ttt.pick_move(current_player)
+    ttt.board[r][c] = current_player
+    current_player = ttt.opposite_player(current_player)
 ttt.print()
