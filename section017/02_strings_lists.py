@@ -69,14 +69,28 @@ sentence = 'the quick brown fox jumped over the lazy dog'
 # 2. reverse the word list
 # 3. join the list back into a sentence (reversed)
 
+# this is equivalent to the split()
 words = []
 current_word = ''
 for character in sentence:
     if character == ' ':
         words.append(current_word)
+        current_word = ''
     else:
         # this character is part of a word
         current_word += character
 
-# error in above code  Can you figure it out?
+words.append(current_word)
 
+# error in above code  Can you figure it out? (two errors fixed)
+# print(words)
+
+# join the list of words back into the string, but in reverse
+
+# equivalent to the function join() (except reversing the words)
+reverse_sentence = ''
+for word in words:
+    # reverse_sentence = word + ' ' + reverse_sentence
+    reverse_sentence = f'{word} {reverse_sentence}'
+
+print(reverse_sentence)

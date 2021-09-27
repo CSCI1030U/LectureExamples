@@ -51,16 +51,23 @@ current_word = ''
 for character in sentence:
     if character == ' ':
         # end of a word
-
+        list_of_words.append(current_word)
+        current_word = ''
     else:
         # not the end of a word
+        current_word += character
 
-
+list_of_words.append(current_word)
 
 # 2. reverse the list of words ([::-1])
+reverse_list_of_words = list_of_words[::-1]
+
 # 3. combine the word list into a single string (spaces in between)
+reverse_sentence = ''
+for word in reverse_list_of_words:
+    reverse_sentence += word + ' '
 
-
+print(reverse_sentence)
 
 # lists
 
