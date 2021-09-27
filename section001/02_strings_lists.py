@@ -50,23 +50,35 @@ sentence = 'the quick brown fox'
 # 1. converted the single string 'sentence' into a list of words
 
 # expected:  word_list = ['the', 'quick', 'brown', 'fox']
+# there is a built-in function to do this:  split()
 word_list = []
 word = ''
 for character in sentence:
     if character == ' ':
         # end of a word
         word_list.append(word)
+        word = ''
     else:
         # not at the end of a word
         word += character
-print(word_list)
+
+word_list.append(word)
+
 
 # 2. reverse the list of words
-
-
+reversed_word_list = word_list[::-1]
 
 # 3. combine the word list back into a single string, words separated by a space
 
+# there is a built-in function to do this:  join()
 
+reversed_sentence = ''
+for word in reversed_word_list:
+    if len(reversed_sentence) > 0:
+        reversed_sentence += ' ' + word
+    else:
+        reversed_sentence += word
 
+# another solution:  drop the space using the strip() function
 
+print(f'The reverse of {sentence} is "{reversed_sentence}"')
