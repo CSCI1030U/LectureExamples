@@ -32,12 +32,22 @@ print(get_the_answer())
 
 # coding challenge 
 
-# 12345 => '12345'
+# 123045 => '123045'
 
 def to_str(number):
-    # YOUR CODE GOES HERE
-
     # Go digit by digit through the number (Hint: %)
     # Add the corresponding character for that digit to the string
+    if number == 0:
+        return '0'
 
-print(to_str(12345))
+    string_rep = ''
+
+    while number > 0:
+        string_rep = str(number % 10) + string_rep   # right-most digit
+        number = number // 10 # remaining digits
+        # print(f'number = {number}')
+
+    return string_rep
+
+num = 0
+print(f'The string representation of {num} is {to_str(num)}')

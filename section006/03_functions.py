@@ -40,3 +40,21 @@ main()
 
 
 print('goodbye')
+
+# coding challenge
+
+# 123045 => '123045'
+
+def to_str(number):
+    # go through each digit of the number (Hint: %)
+    # add the string equivalent of the digit to a string
+    string_rep = ''
+
+    while number > 0:
+        string_rep = str(number % 10) + string_rep  # 5
+        number = number // 10 # 1234
+
+    return string_rep
+
+n = 12345
+print(f'The number {n} converted to a string is {to_str(n)}')
