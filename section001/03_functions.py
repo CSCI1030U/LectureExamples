@@ -41,10 +41,44 @@ main()
 
 # coding challenge
 
+# modulo operator (%) review:
+#   8765432 % 10 => 2
+#   0 % 10 => 0
+
 # 12345 => '12345'
 def to_str(number):
-    # YOUR CODE GOES HERE
-
     # go through the number one digit at a time (Hint: %)
     # add each digit's character to the string
+    string_rep = ''
 
+    # number = 12345
+    # string_rep = ''
+
+    # iteration 1
+    # string_rep = '' + '5' => '5'
+    # number = 1234
+
+    # iteration 2
+    # string_rep = '5' + '4' => '54'
+    # number = 123
+
+    # iteration 3
+    # string_rep = '54' + '3' => '543'
+    # number = 12
+
+    # iteration 4
+    # string_rep = '543' + '2' => '5432'
+    # number = 1
+
+    # iteration 5
+    # string_rep = '5432' + '1' + '54321'
+    # number = 0
+
+    while number > 0:
+        string_rep = str(number % 10) + string_rep 
+
+        number = number // 10 # floor division
+
+    return string_rep
+
+print(to_str(12345))
