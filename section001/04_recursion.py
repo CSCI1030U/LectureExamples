@@ -55,5 +55,16 @@ print(f'The {x}th fibonacci number is {fib(x)}')
 
 # coding challenge
 
+# 1! = 1
+# n! = n * (n-1)!  (for n > 1)
+
 # factorial(1) = 1
 # factorial(n) = n * factorial(n - 1)
+
+# solution:
+# not tail recursive
+def factorial(n):
+    if n == 1:
+        return 1
+
+    return n * factorial(n - 1)
