@@ -47,3 +47,16 @@ if variable_match:
 else:
     print(f'Did not match')
 
+# coding exercise - recognize a binary number (sequence of 1s and 0s) 8 or 16 chars long
+
+binary_regex = re.compile('^[01]{8}([01]{8})?$')   # exact match
+# ^...  - match at the start of the string
+# ...$  - match at the end of the string
+# ^...$ - match the whole string
+binary_match = binary_regex.search('0110100100001111')
+if binary_match:
+    print(f'The start of the binary number: {binary_match.start()}')
+    print(f'The end of the binary number:   {binary_match.end()}')
+    print(f'The matched binary number:      {binary_match.group()}')
+else:
+    print('No match found')
