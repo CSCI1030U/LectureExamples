@@ -57,3 +57,17 @@ print(f'result = {result}')
 # password rules
 password_regex = re.compile('[a-zA-Z0-9?.<>;:!@&^%$]{8,}')
 
+# coding exercise - recognize a binary number of 8 or 16 digits
+
+# ^ - start of the string
+# $ - end of the string
+# ^...$ - match the whole string only
+binary_regex = re.compile('^[01]{8}([01]{8})?$')
+binary_match = binary_regex.search('01101001')
+if binary_match:
+    print(f'The binary number starts at   {binary_match.start()}')
+    print(f'The binary number ends at     {binary_match.end()}')
+    print(f'The binary number matched was {binary_match.group()}')
+else:
+    print('No match found')
+    
