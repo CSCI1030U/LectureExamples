@@ -1,6 +1,7 @@
 # regular expressions
 
-# [0123456789]
+# 0123456789 - match only '0123456789'
+# [0123456789] - matches 0 or 1 or 2 or 3 or ...
 # [0-9]
 # [a-z]+
 # [^a-z]
@@ -35,3 +36,18 @@ punctuation_regex = re.compile('[.,:;!?]')
 result = re.split(punctuation_regex, 'It was the best of times; it was the worst of times.')
 print(result)
 
+# coding exercise - recognize a binary number of 8 or 16 digits
+
+binary_regex = re.compile('^[01]{8}([01]{8})?$')
+binary_match = binary_regex.search('01101001')
+if binary_match:
+    print(f'Start of the binary number: {binary_match.start()}')
+    print(f'End of the binary number:   {binary_match.end()}')
+    print(f'The matched binary number:  {binary_match.group()}')
+else:
+    print('No match found')
+
+# a(ba)*b
+# => ababababab
+# => ab
+# => abab

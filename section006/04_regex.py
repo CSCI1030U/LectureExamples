@@ -56,3 +56,4 @@ print(f'result = {result}')
 
 # password rules
 password_regex = re.compile('[a-zA-Z0-9?.<>;:!@&^%$]{8,}')
+
