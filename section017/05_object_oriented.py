@@ -31,3 +31,12 @@ boots = Pet('Boots', 'Domestic Cat', 80, 1.4)
 print(boots.get_name())
 
 print(spot)
+
+# from section017:
+# inheritance/cat.py
+
+# from re-recordings:
+# ../section017/inheritance/cat.py
+
+# absolute:
+# C:/CSCI1030U/LectureExamples/section017/inheritance/cat.py
