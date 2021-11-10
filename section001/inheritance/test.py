@@ -17,3 +17,5 @@ if dragon < milo:
     print('Dragon is the smaller dog')
 else:
     print('Milo is the smaller dog')
+
+import math

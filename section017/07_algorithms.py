@@ -84,3 +84,22 @@ for n in range(1000, 10001, 1000):
         values.append(random.randint(0, 100))
     num_ops = insert_sort_with_counting(values)
     print(f'sorting a list with {n} elements takes {num_ops} operations')
+
+import math
+def fib(n):
+    if n < 1:
+        return n 
+    if n == 2:
+        return 1 
+    return 2 * math.pow(1.618033988749894, n - 2)
+
+def fib_dp(n):
+    if n <= 1:
+        return n
+    solutions = [0, 1]
+    for i in range(2, n+1):
+        solutions.append(solutions[i - 1] + solutions[i - 2])
+    return solutions[n]    
+
+for n in range(20):
+    print(f'fib({n}) == {fib(n)}, fib_dp({n}) == {fib_dp(n)}')
