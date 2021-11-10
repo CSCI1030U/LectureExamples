@@ -1,5 +1,10 @@
 # dictionary as a list of tuples
 
 
+
 # stack using Python list
+
+
+
+# queue using Python lists
 
