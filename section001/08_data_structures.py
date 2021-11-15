@@ -35,10 +35,19 @@ stack.append(1)                             # push()
 stack.append(2)                             # push()
 stack.append(3)                             # push()
 print("top:", stack[-1])                    # top()
-print("isEmpty?", (len(stack) == 0))    # isEmpty()
-print(stack.pop())                         # prints 3
-print(stack.pop())                         # prints 2
-print(stack.pop())                         # prints 1
+print("isEmpty?", (len(stack) == 0))        # isEmpty()
+print(stack.pop())                          # prints 3
+print(stack.pop())                          # prints 2
+print(stack.pop())                          # prints 1
 
 # queue using Python lists
 
+queue = []
+queue.append(1)                                 # enqueue()
+queue.append(2)                                 # enqueue()
+queue.append(3)                                 # enqueue()
+print("front:", queue[0])                     # front()
+print("isEmpty?", (len(queue) == 0))        # isEmpty()
+print(queue.pop(0))                         # prints 1
+print(queue.pop(0))                         # prints 2
+print(queue.pop(0))                         # prints 3
