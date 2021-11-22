@@ -50,3 +50,10 @@ plt.show()
 
 # Pie charts
 
+labels = ('Biology', 'Forensics', 'Chemistry', 'Computer Science', 'Math', 'Physics')
+counts = (84, 38, 68, 240, 21, 18)
+colours = ('#E0BBE4', '#957DAD', '#D291BC', 'lightskyblue', '#FEC8D8', '#FFDFD3')
+explode = (0, 0, 0, 0.1, 0, 0)
+plt.pie(counts, explode=explode, labels=labels, colors=colours, autopct='%1.1f%%', shadow=True, startangle=90)
+plt.axis('equal')
+plt.show()
