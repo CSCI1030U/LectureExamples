@@ -50,8 +50,21 @@ print(f'ciphertext = {ciphertext}')
 plaintext = vigenere_decrypt(ciphertext, 'PLEASE')
 print(f'plaintext = {plaintext}')
 
-# rsa encryption (will post later)
-
+# rsa encryption
+def encrypt(m, e, n):
+    return (m ** e) % n
 
 # rsa decryption
+def decrypt(c, d, n):
+    return (c ** d) % n
 
+n = int(input('N:'))
+e = int(input('e:'))
+d = int(input('d:'))
+m = int(input('M:'))
+
+c = encrypt(m, e, n)
+print(f'encrypt({m}, {e}, {n}) = {c}')
+
+m_new = decrypt(c, d, n)
+print(f'decrypt({c}, {d}, {n}) = {m_new}')
