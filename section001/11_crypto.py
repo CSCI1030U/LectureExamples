@@ -17,10 +17,6 @@ def caesar_cipher(message, shift_amount):
 # for shift_amount in range(1, 26):
 #     print(caesar_cipher(message, shift_amount))
 
-message = 'CSISMORETHANCODING'
-for shift_amount in range(1, 26):
-    print(caesar_cipher(message, shift_amount))
-
 import math
 
 # vigenere cipher
