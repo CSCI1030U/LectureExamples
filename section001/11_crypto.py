@@ -17,6 +17,10 @@ def caesar_cipher(message, shift_amount):
 # for shift_amount in range(1, 26):
 #     print(caesar_cipher(message, shift_amount))
 
+message = 'CSISMORETHANCODING'
+for shift_amount in range(1, 26):
+    print(caesar_cipher(message, shift_amount))
+
 import math
 
 # vigenere cipher
@@ -45,11 +49,12 @@ def vigenere_decrypt(message, key):
     return ciphertext  
 
 message = 'VALORANTISFUNTOPLAY'
-ciphertext = vigenere_encrypt(message, 'POG')
+ciphertext = vigenere_decrypt(message, 'POG')
 print(f'{message} => {ciphertext}')
 
 plaintext = vigenere_decrypt(ciphertext, 'POG')
 print(f'{ciphertext} => {plaintext}')
+
 
 # rsa encryption
 def encrypt(m, e, n):
