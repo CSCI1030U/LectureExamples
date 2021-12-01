@@ -60,7 +60,41 @@ class TicTacToe:
             return 'X'
 
     def _pick_move(self, board, player):
-        pass
+        # minimax implementation
+        opponent = self.opposite_player(player)
+        move_to_row = None 
+        move_to_col = None 
+        best_score = -1000
+
+        # check if we can make a move
+        winner = self._find_winner(board)
+        if winner == player:
+            return None, None, 1
+        elif winner == opponent:
+            return None, None, -1
+        elif not winner:
+            return None, None, 0
+
+        # look in every available open space, scoring each
+        for row_index in range(len(board)):
+            for col_index in range(len(board[row_index])):
+                # can we move here?
+                if board[row_index][col_index] == ' ':
+                    # try this move
+                    new_board = copy.deepcopy(board)
+                    new_board[row_index][col_index] = player 
+
+                    # evaluate the move
+                    row, col, move_score = self._pick_move(new_board, opponent)
+                    move_score *= -1
+
+                    if move_score > best_score:
+                        best_score = move_score
+                        move_to_row = row_index 
+                        move_to_col = col_index
+
+        # return the move with the best score
+        return move_to_row, move_to_col, best_score
     
     def pick_move(self, player):
         return self._pick_move(self.board, player)
