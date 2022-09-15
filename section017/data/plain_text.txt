@@ -1,4 +1,0 @@
-This is some sample text
-line 2
-another line
-etc
