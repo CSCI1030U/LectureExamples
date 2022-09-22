@@ -1,7 +1,8 @@
 # coding challenge - sin of x
+import math 
 
 num_iterations = 10
-x = 3 * math.pi / 2
+x = math.pi / 2
 n = 0
 total = 0
 while n < num_iterations:
