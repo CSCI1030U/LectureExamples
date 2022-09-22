@@ -1,4 +1,4 @@
-import turtle 
+import turtle
 
 window = turtle.Screen()
 t = turtle.Turtle()
@@ -14,11 +14,11 @@ t.forward(200) # left
 t.pendown()
 t.right(90) # up
 t.forward(300)
-t.right(90) # right 
+t.right(90) # right
 t.forward(150)
 t.right(90) # down
 t.forward(150)
-t.right(90) # left 
+t.right(90) # left
 t.forward(150)
 t.left(135) # diagonal down/right
 t.forward(212)
