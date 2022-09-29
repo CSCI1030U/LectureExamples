@@ -81,8 +81,6 @@ def main():
     squares = [x**2 for x in range(1000000)]
     print(f'{squares = }')
 
-    # coding challenge (split string by delimiter)
-
 
 if __name__ == '__main__':
     main()

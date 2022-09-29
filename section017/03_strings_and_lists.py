@@ -9,5 +9,3 @@
 
 # hacker's corner
 
-
-# coding challenge (split string by delimiter)
