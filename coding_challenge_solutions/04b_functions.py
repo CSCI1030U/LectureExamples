@@ -32,3 +32,19 @@ def myfilter(should_include, values):
 grades = [64.5, 87.0, 55.5, 94.0, 71.5, 46.0, 100.0]
 print(f'{myfilter(lambda x: x > 80.0, grades) = }')
 print(f'{myfilter(lambda x: x < 50.0, grades) = }')
+
+# extra (recursive myfilter)
+
+def myfilter_rec(should_include, values):
+    if len(values) == 0:
+        return []
+
+    rest_results = myfilter_rec(should_include, values[1:])
+
+    if should_include(values[0]):
+        return [values[0]] + rest_results
+    else:
+        return rest_results
+
+grades = [64.5, 87.0, 55.5, 94.0, 71.5, 46.0, 100.0]
+print(f'{myfilter_rec(lambda x: x > 80.0, grades) = }')
