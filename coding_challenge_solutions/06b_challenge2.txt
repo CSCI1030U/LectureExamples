@@ -1,0 +1,16 @@
+Observations:
+
+- The rej state has no exits and is not an accept state.  This is used for rejected strings.
+- The string must start with an 'x', since any other character sends us to the rej state
+- There can be more 'x's after the first 'x', but 1 is the minimum
+- There must be a 'y'
+- There can be more 'y's after the first 'y', but 1 is the minimum
+- There must be an 'x'
+- This last 'x' must be the last character, as any more characters send us to the rej state
+- Any characters other than 'x' or 'y' automatically move us to the rej state
+
+Summary:
+
+This FSA recognizes one or more 'x's, then one or more 'y's, and then a single 'x'
+
+Equivalent regular expression (regex):  x+y+x

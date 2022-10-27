@@ -40,14 +40,35 @@
 
 # practice
 
+import re
 
+ab_regex = re.compile('a|b')
+ab_match = ab_regex.match("a")
+print(f'{ab_match = }')
+if ab_match != None:
+    print(f'\tMatch starts at {ab_match.start()}')
+    print(f'\tMatch ends at {ab_match.end()}')
+    print(f'\tMatch content {ab_match.group()}')
+
+variable_regex = re.compile('[a-zA-Z_][a-zA-Z0-9_]*')
+variable_match = variable_regex.search("__init__ = new_price")
+print(f'{variable_match = }')
+if variable_match != None:
+    print(f'\tMatch starts at {variable_match.start()}')
+    print(f'\tMatch ends at {variable_match.end()}')
+    print(f'\tMatch content {variable_match.group()}')
 
 # coding exercise - recognize a binary number (sequence of 1s and 0s) 8 or 16 chars long
 
-
+binary_regex = re.compile('[01]{8}([01]{8})?$')
+binary_match = binary_regex.match('0000111100001111')
+print(f'{binary_match = }')
+if binary_match:
+    print(f'\tMatch starts at {binary_match.start()}')
+    print(f'\tMatch ends at {binary_match.end()}')
+    print(f'\tMatch content {binary_match.group()}')
 
 # coding exercise (John Conway's Game of Life)
-
 from curses import wrapper
 import curses
 import time
@@ -104,8 +125,31 @@ def _num_alive_neighbours(world, y, x):
 
 def update(world):
     new_world = []
+    for y in range(len(world)):
+        new_row = []
+        for x in range(len(world[y])):
+            num_neighbours = _num_alive_neighbours(world, y, x)
 
-    # TODO: Add update code
+            # rule 1 - alive cell, with alive neighbours < 2 -> dead (underpopulation)
+            if world[y][x] == 1 and num_neighbours < 2:
+                new_row.append(0)
+
+            # rule 2 - alive cell, with alive neighbours 2 or 3 -> alive (survival)
+            elif world[y][x] == 1 and num_neighbours >= 2 and num_neighbours <= 3:
+                new_row.append(1)
+
+            # rule 3 - alive cell, with alive neighbours is > 3 -> dead (overpopulation)
+            elif world[y][x] == 1 and num_neighbours > 3:
+                new_row.append(0)
+
+            # rule 4 - dead cell, with alive neighbours == 3 -> alive (reproduction)
+            elif world[y][x] == 0 and num_neighbours == 3:
+                new_row.append(1)
+
+            else:
+                new_row.append(world[y][x])
+
+        new_world.append(new_row)
 
     return new_world
 
