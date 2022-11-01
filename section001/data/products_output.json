@@ -1,0 +1,12 @@
+[
+    {
+        "product_id": 1,
+        "name": "RTX 4090",
+        "price": 1000000.00
+    },
+    {
+        "product_id": 2,
+        "name": "RTX 4080",
+        "price": 500000.00
+    }
+]
