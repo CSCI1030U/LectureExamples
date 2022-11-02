@@ -11,3 +11,17 @@ midterm_marks = [52.0, 48.5, 54.25, 61.5, 64.0, 77.75, 29.0, 91.25, 68.25, 59.75
 
 # coding exercise 3 (test class for Student)
 
+class Student:
+    def __init__(self, gpa, name):
+        self.gpa = gpa
+        self.name = name
+
+    def set_mark(self, course, mark):
+        self.marks.append(mark)
+
+    def get_average(self):
+        sum = 0
+        for mark in self.marks:
+            sum += mark
+        return sum / len(self.marks)
+
