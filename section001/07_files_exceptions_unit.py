@@ -79,7 +79,8 @@ class Student_Test(unittest.TestCase):
         clarissa = Student(0.0, 'Clarissa')
         self.assertEqual(clarissa.name, 'Clarissa')
         self.assertEqual(clarissa.gpa, 0.0)
-    
+        self.assertEqual(clarissa.marks, [])
+
     def test_save_mark(self):
         clarissa = Student(0.0, 'Clarissa')
         self.assertTrue(clarissa.marks == [])
