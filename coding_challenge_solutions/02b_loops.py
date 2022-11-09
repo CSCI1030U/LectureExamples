@@ -1,5 +1,5 @@
-# coding challenge - sin of x
-import math 
+# coding challenge 2.1 - sin of x
+import math
 
 num_iterations = 10
 x = math.pi / 2
@@ -14,7 +14,7 @@ while n < num_iterations:
 
 print(f'sin(x): {total = }')
 
-# coding exercise 2 - square root using the bisection method
+# coding challenge 2.2 - square root using the bisection method
 
 x = 2
 

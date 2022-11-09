@@ -1,4 +1,4 @@
-# coding challenge (Dog class)
+# coding challenge 5.1 (Dog class)
 
 class Dog:
     def __init__(self, name, mass):

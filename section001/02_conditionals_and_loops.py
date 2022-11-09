@@ -12,7 +12,7 @@ n = 0
 while n < 10:
     print(f'Print (while loop) {n}')
     n += 1
-    
+
 for n in [0,1,2,3,4,5,6,7,8,9]:
     print(f'Print (for loop with list) {n}')
 
@@ -48,7 +48,7 @@ for n in range(1, 1000001):
 
 print(f'{pi_estimate*4 = }')
 
-# coding exercise
+# coding exercise 2.1
 
 import math
 

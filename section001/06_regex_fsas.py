@@ -58,7 +58,7 @@ if variable_match != None:
     print(f'\tMatch ends at {variable_match.end()}')
     print(f'\tMatch content {variable_match.group()}')
 
-# coding exercise - recognize a binary number (sequence of 1s and 0s) 8 or 16 chars long
+# coding exercise 6.1 - recognize a binary number (sequence of 1s and 0s) 8 or 16 chars long
 
 binary_regex = re.compile('[01]{8}([01]{8})?$')
 binary_match = binary_regex.match('0000111100001111')
@@ -68,7 +68,7 @@ if binary_match:
     print(f'\tMatch ends at {binary_match.end()}')
     print(f'\tMatch content {binary_match.group()}')
 
-# coding exercise (John Conway's Game of Life)
+# coding exercise 6.2 (John Conway's Game of Life)
 from curses import wrapper
 import curses
 import time

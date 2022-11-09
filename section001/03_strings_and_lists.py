@@ -43,15 +43,15 @@ def main():
     print(f'{ram[3] = }')
 
     ram_better = {
-        'size': 128, 
-        'std': 'DDR4', 
+        'size': 128,
+        'std': 'DDR4',
         'clock': 2700,
         'price': '$350.00',
     }
 
     print(f"{ram_better['price'] = }")
 
-    # coding exercise 1 (reverse words)
+    # coding exercise 3.1 (reverse words)
 
     sentence = 'ahmed runs quickly'
     words = sentence.split(' ')
@@ -63,7 +63,7 @@ def main():
 
     print(f'{reverse_sentence = }')
 
-    # coding exercise 2 (average mark)
+    # coding exercise 3.2 (average mark)
 
     midterm_marks = [40.0, 50.0, 70.0]
     print(f'{sum(midterm_marks)/len(midterm_marks)=}')

@@ -8,7 +8,7 @@ with open('section001/data/products_output.txt', 'w') as products_file:
     for product in products:
         products_file.write(f'{product}\n')
 
-import json 
+import json
 
 with open('section001/data/products_output.json', 'r') as json_input:
     products = json.load(json_input)
@@ -30,7 +30,7 @@ products_new = [
 with open('section001/data/products_new.json', 'w') as json_output:
     json.dump(products_new, json_output)
 
-# coding exercise 1 (output to CSV format)
+# coding exercise 7.1 (output to CSV format)
 
 sids = ['100000000', '100000001', '100000002', '100000003', '100000004', '100000005', '100000006', '100000007', '100000008', '100000009']
 midterm_marks = [52.0, 48.5, 54.25, 61.5, 64.0, 77.75, 29.0, 91.25, 68.25, 59.75]
@@ -38,7 +38,7 @@ with open('section001/data/student_data.csv', 'w') as student_output:
     for i in range(len(sids)):
         student_output.write(f'{sids[i]},{midterm_marks[i]}\n')
 
-# coding exercise 2 (output 1/n for all n in the list [5,4,3,2,1,0])
+# coding exercise 7.2 (output 1/n for all n in the list [5,4,3,2,1,0])
 class DontDivideByZeroSilly(Exception):
     pass
 
@@ -55,7 +55,7 @@ try:
 except DontDivideByZeroSilly as error:
     print(f'Error when dividing the list elements: {error}')
 
-# coding exercise 3 (test class for Student)
+# coding exercise 7.3 (test class for Student)
 
 class Student:
     def __init__(self, gpa, name):
@@ -72,7 +72,7 @@ class Student:
             sum += mark
         return sum / len(self.marks)
 
-import unittest 
+import unittest
 
 class Student_Test(unittest.TestCase):
     def test_init(self):
@@ -88,7 +88,7 @@ class Student_Test(unittest.TestCase):
         self.assertTrue(clarissa.marks == [70.0])
         clarissa.set_mark('CSCI1060U', 80.0)
         self.assertTrue(clarissa.marks == [70.0, 80.0])
-    
+
     def test_get_average(self):
         clarissa = Student(0.0, 'Clarissa')
         clarissa.set_mark('CSCI1030U', 70.0)

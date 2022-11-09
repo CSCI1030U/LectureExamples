@@ -50,7 +50,7 @@ add_also = lambda n, m: n + m
 result = add_also(2, 4)
 print(f'add_also: {result = }')
 
-# coding exercise (fibonacci)
+# coding exercise 4.1 (fibonacci)
 
 '''
 fib(0) = 0
@@ -86,7 +86,7 @@ def double_list(values):
 
     for val in values:
         result.append(double_it(val))
-    
+
     return result
 
 def apply_op(values, operation):
@@ -95,7 +95,7 @@ def apply_op(values, operation):
     for val in values:
         result = operation(val)
         result_list.append(result)
-    
+
     return result_list
 
 print(f'{apply_op([1,2,3], double_it) = }')
@@ -104,4 +104,3 @@ print(f'{apply_op([1,2,3], lambda num: num * 2) = }')
 print(f'{apply_op([1,2,3], lambda num: num ** 2) = }')
 
 # coding challenge 2 (myfilter)
-

@@ -4,7 +4,7 @@ from pdb import line_prefix
 
 x = 1  # y = 2
 '''
-This is a line 
+This is a line
 Another line
 '''
 
@@ -46,9 +46,9 @@ print(f'My name is {fname} and I am {age} years old.')
 print(f'My name is {fname} and I am {age} years old.')
 print(f'My name is {fname} and I am {age} years old.')
 
-# Coding exercise
+# Coding exercise 1.1
 
-import turtle 
+import turtle
 
 window = turtle.Screen()
 t = turtle.Turtle()
@@ -144,4 +144,3 @@ window.mainloop()
 
 
 # Coding challenge (initially centered, facing right)
-

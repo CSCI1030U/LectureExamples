@@ -1,3 +1,5 @@
+# solution to coding challenge 1.1
+
 import turtle
 
 window = turtle.Screen()

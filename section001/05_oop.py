@@ -1,6 +1,6 @@
 class Student:
     def __init__(self, sid, first_name, last_name):
-        self.sid = sid 
+        self.sid = sid
         self.first_name = first_name
         self.last_name = last_name
         self.registered_date = {
@@ -8,12 +8,12 @@ class Student:
             'month': 9,
             'day': 1,
         }
-    
+
     def set_sid(self, new_sid): # mutator (setter)
         self.sid = new_sid
 
     def get_sid(self): # accessor (getter)
-        return self.sid    
+        return self.sid
 
     def __eq__(self, other):
         return self.sid == other.sid and self.first_name == other.first_name and self.last_name == other.last_name
@@ -33,7 +33,7 @@ class Grad_Student(Student):
     def __init__(self, sid, first_name, last_name):
         super().__init__(sid, first_name, last_name)
         self.supervisor = None
-    
+
     def set_supervisor(self, new_supervisor):
         self.supervisor = new_supervisor
 
@@ -46,16 +46,16 @@ print(f'{str(student2) = }')
 print(student2.registered_date)
 print(student2 == student2_copy)
 
-# exercise 1 (generator)
+# coding exercise 5.1 (square generator)
 
 class Square_Generator:
     def __init__(self, start_num, end_num):
-        self.next_num = start_num 
-        self.end_num = end_num 
-    
+        self.next_num = start_num
+        self.end_num = end_num
+
     def __iter__(self):
-        return self 
-    
+        return self
+
     def __next__(self):
         if self.next_num < self.end_num:
             current_num = self.next_num * self.next_num
@@ -68,16 +68,16 @@ for square in Square_Generator(5, 10):
 
 print(f'{list(Square_Generator(5, 10)) = }')
 
-# exercise 2 (Shoe, Product)
+# coding exercise 5.2 (Shoe, Product)
 
 class Product:
     def __init__(self, price, description):
-        self.price = price 
+        self.price = price
         self.description = description
-    
+
     def get_price(self):
-        return self.price 
-    
+        return self.price
+
     def get_description(self):
         return self.description
 
@@ -85,19 +85,19 @@ class Shoe(Product):
     def __init__(self, brand, size, colour, price, description):
         super().__init__(price, description)
 
-        self.brand = brand 
-        self.size = size 
+        self.brand = brand
+        self.size = size
         self.colour = colour
-    
+
     def get_brand(self):
-        return self.brand 
+        return self.brand
 
     def get_size(self):
-        return self.size 
+        return self.size
 
     def get_colour(self):
-        return self.colour 
-    
+        return self.colour
+
     def __lt__(self, other):
         return self.size < other.size
 
