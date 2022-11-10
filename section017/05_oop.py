@@ -46,7 +46,7 @@ print(f'{str(student2) = }')
 print(student2.registered_date)
 print(student2 == student2_copy)
 
-# exercise 1 (generator)
+# exercise 5.1 (generator)
 
 class Square_Generator:
     def __init__(self, start_num, end_num):
@@ -68,7 +68,7 @@ for square in Square_Generator(5, 10):
 
 print(f'{list(Square_Generator(5, 10)) = }')
 
-# exercise 2 (Shoe, Product)
+# exercise 5.2 (Shoe, Product)
 
 class Product:
     def __init__(self, price, description):

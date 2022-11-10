@@ -51,7 +51,7 @@ output_message = f'My name is {first_name}, and I am {age + 10} years old.'
 output_message = f'My name is {first_name}, and I am {age + 10} years old.'
 output_message = f'My name is {first_name}, and I am {age + 10} years old.'
 
-# Coding exercise
+# Coding exercise 1.1
 
 import turtle 
 

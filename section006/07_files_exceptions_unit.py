@@ -36,7 +36,7 @@ products = [
 with open('section006/data/products_output.json', 'w') as json_output_file:
     json.dump(products, json_output_file)
 
-# coding exercise 1 (output to CSV format)
+# coding exercise 7.1 (output to CSV format)
 
 sids = ['100000000', '100000001', '100000002', '100000003', '100000004', '100000005', '100000006', '100000007', '100000008', '100000009']
 midterm_marks = [52.0, 48.5, 54.25, 61.5, 64.0, 77.75, 29.0, 91.25, 68.25, 59.75]
@@ -45,7 +45,7 @@ with open('section006/data/student_data.csv', 'w') as student_data_output_file:
     for index in range(len(sids)):
         student_data_output_file.write(f'{sids[index]},{midterm_marks[index]}\n')
 
-# coding exercise 2 (output 1/n for all n in the list [5,4,3,2,1,0])
+# coding exercise 7.2 (output 1/n for all n in the list [5,4,3,2,1,0])
 class DividingByZeroIsForFools(Exception):
     pass
 
@@ -58,7 +58,7 @@ class DividingByZeroIsForFools(Exception):
 
 print('All done exercise 2!')
 
-# coding exercise 3 (test class for Student)
+# coding exercise 7.3 (test class for Student)
 
 class Student:
     def __init__(self, gpa, name):

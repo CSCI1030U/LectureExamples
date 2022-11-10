@@ -64,7 +64,7 @@ def main():
     gen1 = (x**2 for x in range(100000))  # on demand
     list1 = [x**2 for x in range(100000)] # pre-generated
 
-    # coding exercise 1 (reverse words)
+    # coding exercise 3.1 (reverse words)
     sentence = 'ahmed runs quickly'
     words = sentence.split(' ')
     reverse = ''
@@ -75,7 +75,7 @@ def main():
 
     print(f'{reverse = }')
 
-    # coding exercise 2 (average mark)
+    # coding exercise 3.2 (average mark)
 
     marks = [50.0, 65.0, 77.5, 80.0]
 

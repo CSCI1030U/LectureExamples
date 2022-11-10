@@ -69,13 +69,6 @@ print(f'{fib5 = }')
 fib10 = fib(10)
 print(f'{fib10 = }')
 
-# coding challenge 1 (factorial)
-'''
-fact(0) = 1
-fact(1) = 1
-fact(n) = n * fact(n - 1)
-'''
-
 # higher order function examples
 
 def double_it(num):
@@ -102,5 +95,3 @@ print(f'{apply_op([1,2,3], double_it) = }')
 
 print(f'{apply_op([1,2,3], lambda num: num * 2) = }')
 print(f'{apply_op([1,2,3], lambda num: num ** 2) = }')
-
-# coding challenge 2 (myfilter)

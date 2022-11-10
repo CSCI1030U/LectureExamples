@@ -45,7 +45,7 @@ gen2 = (n ** 2 for n in range(5,15,3))
 for i in gen2:
     print(f'gen2 output: {i = }')
 
-# coding exercise (e ** x)
+# coding exercise 2.1 (e ** x)
 
 import math 
 

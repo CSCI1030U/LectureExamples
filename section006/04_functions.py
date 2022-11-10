@@ -40,7 +40,7 @@ def print_n_times(n, message):
 
 print_n_times(10, 'Hello there')
 
-# coding exercise (fibonacci)
+# coding exercise 4.1 (fibonacci)
 
 def fib(n):
     # base case

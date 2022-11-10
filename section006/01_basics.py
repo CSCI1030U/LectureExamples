@@ -47,7 +47,7 @@ print(f'His name is {first_name} and I am {age} years young.')
 print(f'My name is {first_name} and I am {age} years young.')
 print(f'My name is {first_name} and I am {age} years young.')
 
-# Coding exercise
+# Coding exercise 1.1
 
 import turtle 
 

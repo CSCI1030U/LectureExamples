@@ -56,7 +56,7 @@ gen2 = (n ** 2 for n in range(0, 10, 2))
 for i in gen2:
     print(f'for gen2: {i=}')
 
-# coding exercise
+# coding exercise 2.1
 
 import math
 

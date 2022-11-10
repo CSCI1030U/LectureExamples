@@ -60,7 +60,7 @@ print(f"{ram2['price'] = }")
 for key in ram2:
     print(f'\t{key = } => {ram2[key] = }')
 
-# coding exercise 1 (reverse words)
+# coding exercise 3.1 (reverse words)
 
 sentence = 'ahmed runs quickly'
 words = sentence.split(' ')
@@ -73,7 +73,7 @@ for word in words[::-1]:  # words[::-1] is the reverse of words
 
 print(f'{reverse = }')
 
-# coding exercise 2 (average mark)
+# coding exercise 3.2 (average mark)
 
 midterm_marks = [50.0, 60.0, 85.0]
 print(f'{sum(midterm_marks) / len(midterm_marks) = }')
