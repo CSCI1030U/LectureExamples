@@ -82,17 +82,18 @@ def has_duplicates(elements):
     return False
 
 def simulate_birthday_problem(num_iterations):
-    probabilities = []
+    probabilities = {}
 
-    for n in range(2, 55):
+    for group_size in range(2, 55):
         num_wins = 0
         for iteration in range(num_iterations):
             birthdays = []
-            for person in range(n):
+            for person in range(group_size):
                 birthdays.append(random.randint(0, 364))
             if has_duplicates(birthdays):
                 num_wins += 1
-        probabilities.append(num_wins / num_iterations)
+        probabilities[f'{group_size} people'] = num_wins / num_iterations
+
     return probabilities
 
 print(f'{simulate_birthday_problem(2000) = }')
