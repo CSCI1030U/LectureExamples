@@ -69,31 +69,32 @@ print(f'{prob_of_2_6s(10000) = }')
 # exercise 10.3 (estimate prob of birthday prob)
 import random
 
-def has_duplicates(elements):
-    for element in elements:
-        if elements.count(element) > 1:
+def has_duplicates(values):
+    for element in values:
+        if values.count(element) > 1:
             return True
     return False
 
-def has_duplicates(elements):
-    for element in elements:
-        if elements.count(element) > 1:
-            return True
-    return False
-
-def simulate_birthday_problem(num_iterations):
+def simulate_birthday_problem(num_iterations, max_group_size):
     probabilities = {}
 
-    for group_size in range(2, 55):
+    # try all group sizes between 2 and max_group_size
+    for group_size in range(2, max_group_size + 1):
         num_wins = 0
+        # try the same simulation many times to determine the probability
         for iteration in range(num_iterations):
             birthdays = []
-            for person in range(group_size):
-                birthdays.append(random.randint(0, 364))
+            # generate the birthdays for everyone in the group
+            # for person in range(group_size):
+            #     birthdays.append(random.randint(0, 364))
+            birthday_values = np.random.random(group_size)
+            birthdays = list(np.floor(birthday_values * 365))
+
+            # did we find a match?
             if has_duplicates(birthdays):
                 num_wins += 1
-        probabilities[f'{group_size} people'] = num_wins / num_iterations
 
+        probabilities[f'group-size-{group_size}'] = num_wins / num_iterations
     return probabilities
 
-print(f'{simulate_birthday_problem(2000) = }')
+print(f'{simulate_birthday_problem(2000, 65) = }')
